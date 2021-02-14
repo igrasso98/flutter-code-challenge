@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:albums_repository/i_albums_repository.dart';
-import 'package:upstreet_flutter_code_challenge/screens/album_list.dart';
 import 'package:upstreet_flutter_code_challenge/resources/theme/themes.dart';
+import 'package:upstreet_flutter_code_challenge/resources/strings/routes.dart';
 import 'package:upstreet_flutter_code_challenge/resources/strings/strings.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/albums/albums_page.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/albums/bloc/albums_cubit.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -16,7 +18,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [],
+      providers: [
+        BlocProvider(
+          create: (_) => AlbumsCubit(albumsRepository: albumsRepository),
+        )
+      ],
       child: AppBuilder(),
     );
   }
@@ -31,8 +37,10 @@ class AppBuilder extends StatelessWidget {
       navigatorKey: _navigatorKey,
       title: Strings.app_title,
       theme: Themes.defaultTheme(),
-      home: const AlbumList(),
-      routes: {},
+      home: AlbumsPage(),
+      routes: {
+        Routes.albums_page: (_) => AlbumsPage(),
+      },
     );
   }
 }

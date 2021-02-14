@@ -19,7 +19,7 @@ class AlbumsService implements IAlbumsService {
       int albumId) async {
     final response = await httpProvider.getAndDecode<PhotosDTO>(
       url: sprintf(
-          'https://jsonplaceholder.typicode.com/albums/%i/photos', [albumId]),
+          'https://jsonplaceholder.typicode.com/photos?albumId=%i', [albumId]),
       headers: {},
       fromJson: (Map<String, dynamic> json) => PhotosDTO.fromJson(json),
     );
