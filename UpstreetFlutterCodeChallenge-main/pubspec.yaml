@@ -20,6 +20,12 @@ dependencies:
 
   analyzer: ^0.41.2
 
+  albums_service:
+    path: packages/albums_service
+
+  http_provider:
+    path: packages/http_provider
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

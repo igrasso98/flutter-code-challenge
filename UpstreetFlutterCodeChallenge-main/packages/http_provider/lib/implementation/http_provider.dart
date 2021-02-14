@@ -19,7 +19,8 @@ class HttpProvider implements IHttpProvider {
       (response) {
         Map<String, dynamic> json;
         try {
-          json = convert.json.decode(response.body) as Map<String, dynamic>;
+          json = convert.json.decode('{"val": ${response.body}}')
+              as Map<String, dynamic>;
         } catch (e) {
           return left(JsonDecodingFailure(e.toString()));
         }
