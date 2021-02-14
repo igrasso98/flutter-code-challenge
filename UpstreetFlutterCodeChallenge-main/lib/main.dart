@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:upstreet_flutter_code_challenge/screens/album_list.dart';
+import 'package:upstreet_flutter_code_challenge/core/injection_container.dart'
+    as inject;
 
-import './screens/album_list.dart';
-
-void main() {
+Future<void> main() async {
+  await inject.init();
   runApp(MyApp());
 }
 
