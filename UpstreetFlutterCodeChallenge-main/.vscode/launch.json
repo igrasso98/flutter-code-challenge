@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "UpstreetFlutterCodeChallenge-main",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "albums_repository",
+            "cwd": "packages/albums_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "albums_service",
+            "cwd": "packages/albums_service",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "http_provider",
+            "cwd": "packages/http_provider",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
