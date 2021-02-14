@@ -7,15 +7,15 @@ import 'package:albums_repository/i_albums_repository.dart';
 
 class AlbumsRepository implements IAlbumsRepository {
   AlbumsRepository({
-    @required IAlbumsService albumsService,
-  }) : _albumsService = albumsService;
+    @required this.albumsService,
+  });
 
-  final IAlbumsService _albumsService;
+  final IAlbumsService albumsService;
 
   @override
   Future<Either<AlbumsRepositoryFailures, List<Photo>>> fetchAlbumPhotos(
       int albumId) async {
-    final either = await _albumsService.fetchAlbumPhotos(albumId);
+    final either = await albumsService.fetchAlbumPhotos(albumId);
     return either.fold(
       (failure) => Left(AlbumsRepositoryFailures.serviceFailure(failure)),
       (response) => Right(_mapResponseToPhotoList(response)),

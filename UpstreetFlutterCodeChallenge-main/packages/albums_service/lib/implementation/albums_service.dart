@@ -9,16 +9,15 @@ import 'package:albums_service/failures/albums_service_failures.dart';
 
 class AlbumsService implements IAlbumsService {
   AlbumsService({
-    @required IHttpProvider httpProvider,
-  })  : _httpProvider = httpProvider,
-        assert(httpProvider != null);
+    @required this.httpProvider,
+  });
 
-  final IHttpProvider _httpProvider;
+  final IHttpProvider httpProvider;
 
   @override
   Future<Either<AlbumsServiceFailures, PhotosDTO>> fetchAlbumPhotos(
       int albumId) async {
-    final response = await _httpProvider.getAndDecode<PhotosDTO>(
+    final response = await httpProvider.getAndDecode<PhotosDTO>(
       url: sprintf(
           'https://jsonplaceholder.typicode.com/albums/%i/photos', [albumId]),
       headers: {},

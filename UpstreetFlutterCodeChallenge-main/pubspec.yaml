@@ -30,6 +30,8 @@ dependencies:
   
   json_serializable: ^3.5.1
 
+  flutter_bloc: ^6.1.2
+
   albums_service:
     path: packages/albums_service
 
