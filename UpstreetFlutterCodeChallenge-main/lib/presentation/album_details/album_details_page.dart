@@ -1,6 +1,8 @@
+import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:albums_repository/albums_repository.dart';
+import 'package:albums_repository/i_albums_repository.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/widgets/full_screen_loading.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/album_details/bloc/album_details_cubit.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/album_details/bloc/album_details_state.dart';
@@ -26,6 +28,7 @@ class AlbumDetailsPage extends StatelessWidget {
           child: BlocProvider(
             create: (context) => AlbumDetailsCubit(
                 albumDetailsModeCubit: context.read<AlbumDetailsModeCubit>(),
+                albumsRepository: GetIt.I<IAlbumsRepository>(),
                 photo: photo),
             child: BlocBuilder<AlbumDetailsCubit, AlbumDetailsState>(
               builder: (_, state) {

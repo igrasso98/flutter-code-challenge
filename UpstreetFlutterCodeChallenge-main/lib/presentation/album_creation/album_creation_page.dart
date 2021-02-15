@@ -12,10 +12,13 @@ class AlbumCreationPage extends StatelessWidget {
   const AlbumCreationPage({
     Key key,
     @required this.albumId,
+    @required this.id,
   })  : assert(albumId != null),
+        assert(id != null),
         super(key: key);
 
   final int albumId;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,8 @@ class AlbumCreationPage extends StatelessWidget {
               return state.maybeWhen(
                 loading: () => FullScreenLoading(),
                 failed: (failure) => AlbumCreationFailedPage(failure: failure),
-                orElse: () => AlbumCreationInProcessPage(albumId: albumId),
+                orElse: () =>
+                    AlbumCreationInProcessPage(albumId: albumId, id: id),
               );
             },
           ),

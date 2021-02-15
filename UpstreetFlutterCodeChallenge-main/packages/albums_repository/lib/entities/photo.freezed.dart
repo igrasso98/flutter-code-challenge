@@ -132,7 +132,7 @@ class __$PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc
-class _$_Photo implements _Photo {
+class _$_Photo extends _Photo {
   _$_Photo(
       {@required this.albumId,
       @required this.id,
@@ -143,7 +143,8 @@ class _$_Photo implements _Photo {
         assert(id != null),
         assert(title != null),
         assert(url != null),
-        assert(thumbnailUrl != null);
+        assert(thumbnailUrl != null),
+        super._();
 
   factory _$_Photo.fromJson(Map<String, dynamic> json) =>
       _$_$_PhotoFromJson(json);
@@ -202,7 +203,8 @@ class _$_Photo implements _Photo {
   }
 }
 
-abstract class _Photo implements Photo {
+abstract class _Photo extends Photo {
+  _Photo._() : super._();
   factory _Photo(
       {@required int albumId,
       @required int id,

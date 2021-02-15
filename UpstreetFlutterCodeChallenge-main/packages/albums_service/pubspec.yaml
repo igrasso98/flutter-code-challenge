@@ -22,6 +22,9 @@ dependencies:
   http_provider:
     path: ../http_provider
 
+  persistance_service:
+    path: ../persistance_service
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

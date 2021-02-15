@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'photo_dto.dart';
+part of 'photo.dart';
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-PhotoDTO _$PhotoDTOFromJson(Map<String, dynamic> json) {
-  return _PhotoDTO.fromJson(json);
+Photo _$PhotoFromJson(Map<String, dynamic> json) {
+  return _Photo.fromJson(json);
 }
 
 /// @nodoc
-class _$PhotoDTOTearOff {
-  const _$PhotoDTOTearOff();
+class _$PhotoTearOff {
+  const _$PhotoTearOff();
 
 // ignore: unused_element
-  _PhotoDTO call(
-      {@required int albumId,
-      @required int id,
-      @required String title,
-      @required String url,
-      @required String thumbnailUrl}) {
-    return _PhotoDTO(
+  _Photo call(
+      {@HiveField(0) int albumId,
+      @HiveField(1) int id,
+      @HiveField(2) String title,
+      @HiveField(3) String url,
+      @HiveField(4) String thumbnailUrl}) {
+    return _Photo(
       albumId: albumId,
       id: id,
       title: title,
@@ -33,43 +33,52 @@ class _$PhotoDTOTearOff {
   }
 
 // ignore: unused_element
-  PhotoDTO fromJson(Map<String, Object> json) {
-    return PhotoDTO.fromJson(json);
+  Photo fromJson(Map<String, Object> json) {
+    return Photo.fromJson(json);
   }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $PhotoDTO = _$PhotoDTOTearOff();
+const $Photo = _$PhotoTearOff();
 
 /// @nodoc
-mixin _$PhotoDTO {
+mixin _$Photo {
+  @HiveField(0)
   int get albumId;
+  @HiveField(1)
   int get id;
+  @HiveField(2)
   String get title;
+  @HiveField(3)
   String get url;
+  @HiveField(4)
   String get thumbnailUrl;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
-  $PhotoDTOCopyWith<PhotoDTO> get copyWith;
+  $PhotoCopyWith<Photo> get copyWith;
 }
 
 /// @nodoc
-abstract class $PhotoDTOCopyWith<$Res> {
-  factory $PhotoDTOCopyWith(PhotoDTO value, $Res Function(PhotoDTO) then) =
-      _$PhotoDTOCopyWithImpl<$Res>;
+abstract class $PhotoCopyWith<$Res> {
+  factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
+      _$PhotoCopyWithImpl<$Res>;
   $Res call(
-      {int albumId, int id, String title, String url, String thumbnailUrl});
+      {@HiveField(0) int albumId,
+      @HiveField(1) int id,
+      @HiveField(2) String title,
+      @HiveField(3) String url,
+      @HiveField(4) String thumbnailUrl});
 }
 
 /// @nodoc
-class _$PhotoDTOCopyWithImpl<$Res> implements $PhotoDTOCopyWith<$Res> {
-  _$PhotoDTOCopyWithImpl(this._value, this._then);
+class _$PhotoCopyWithImpl<$Res> implements $PhotoCopyWith<$Res> {
+  _$PhotoCopyWithImpl(this._value, this._then);
 
-  final PhotoDTO _value;
+  final Photo _value;
   // ignore: unused_field
-  final $Res Function(PhotoDTO) _then;
+  final $Res Function(Photo) _then;
 
   @override
   $Res call({
@@ -92,22 +101,26 @@ class _$PhotoDTOCopyWithImpl<$Res> implements $PhotoDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PhotoDTOCopyWith<$Res> implements $PhotoDTOCopyWith<$Res> {
-  factory _$PhotoDTOCopyWith(_PhotoDTO value, $Res Function(_PhotoDTO) then) =
-      __$PhotoDTOCopyWithImpl<$Res>;
+abstract class _$PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
+  factory _$PhotoCopyWith(_Photo value, $Res Function(_Photo) then) =
+      __$PhotoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int albumId, int id, String title, String url, String thumbnailUrl});
+      {@HiveField(0) int albumId,
+      @HiveField(1) int id,
+      @HiveField(2) String title,
+      @HiveField(3) String url,
+      @HiveField(4) String thumbnailUrl});
 }
 
 /// @nodoc
-class __$PhotoDTOCopyWithImpl<$Res> extends _$PhotoDTOCopyWithImpl<$Res>
-    implements _$PhotoDTOCopyWith<$Res> {
-  __$PhotoDTOCopyWithImpl(_PhotoDTO _value, $Res Function(_PhotoDTO) _then)
-      : super(_value, (v) => _then(v as _PhotoDTO));
+class __$PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res>
+    implements _$PhotoCopyWith<$Res> {
+  __$PhotoCopyWithImpl(_Photo _value, $Res Function(_Photo) _then)
+      : super(_value, (v) => _then(v as _Photo));
 
   @override
-  _PhotoDTO get _value => super._value as _PhotoDTO;
+  _Photo get _value => super._value as _Photo;
 
   @override
   $Res call({
@@ -117,7 +130,7 @@ class __$PhotoDTOCopyWithImpl<$Res> extends _$PhotoDTOCopyWithImpl<$Res>
     Object url = freezed,
     Object thumbnailUrl = freezed,
   }) {
-    return _then(_PhotoDTO(
+    return _then(_Photo(
       albumId: albumId == freezed ? _value.albumId : albumId as int,
       id: id == freezed ? _value.id : id as int,
       title: title == freezed ? _value.title : title as String,
@@ -130,45 +143,45 @@ class __$PhotoDTOCopyWithImpl<$Res> extends _$PhotoDTOCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@HiveType(typeId: 1, adapterName: 'PhotoAdapter')
 
 /// @nodoc
-class _$_PhotoDTO extends _PhotoDTO {
-  const _$_PhotoDTO(
-      {@required this.albumId,
-      @required this.id,
-      @required this.title,
-      @required this.url,
-      @required this.thumbnailUrl})
-      : assert(albumId != null),
-        assert(id != null),
-        assert(title != null),
-        assert(url != null),
-        assert(thumbnailUrl != null),
-        super._();
+class _$_Photo implements _Photo {
+  const _$_Photo(
+      {@HiveField(0) this.albumId,
+      @HiveField(1) this.id,
+      @HiveField(2) this.title,
+      @HiveField(3) this.url,
+      @HiveField(4) this.thumbnailUrl});
 
-  factory _$_PhotoDTO.fromJson(Map<String, dynamic> json) =>
-      _$_$_PhotoDTOFromJson(json);
+  factory _$_Photo.fromJson(Map<String, dynamic> json) =>
+      _$_$_PhotoFromJson(json);
 
   @override
+  @HiveField(0)
   final int albumId;
   @override
+  @HiveField(1)
   final int id;
   @override
+  @HiveField(2)
   final String title;
   @override
+  @HiveField(3)
   final String url;
   @override
+  @HiveField(4)
   final String thumbnailUrl;
 
   @override
   String toString() {
-    return 'PhotoDTO(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
+    return 'Photo(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PhotoDTO &&
+        (other is _Photo &&
             (identical(other.albumId, albumId) ||
                 const DeepCollectionEquality()
                     .equals(other.albumId, albumId)) &&
@@ -194,37 +207,41 @@ class _$_PhotoDTO extends _PhotoDTO {
 
   @JsonKey(ignore: true)
   @override
-  _$PhotoDTOCopyWith<_PhotoDTO> get copyWith =>
-      __$PhotoDTOCopyWithImpl<_PhotoDTO>(this, _$identity);
+  _$PhotoCopyWith<_Photo> get copyWith =>
+      __$PhotoCopyWithImpl<_Photo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PhotoDTOToJson(this);
+    return _$_$_PhotoToJson(this);
   }
 }
 
-abstract class _PhotoDTO extends PhotoDTO {
-  const _PhotoDTO._() : super._();
-  const factory _PhotoDTO(
-      {@required int albumId,
-      @required int id,
-      @required String title,
-      @required String url,
-      @required String thumbnailUrl}) = _$_PhotoDTO;
+abstract class _Photo implements Photo {
+  const factory _Photo(
+      {@HiveField(0) int albumId,
+      @HiveField(1) int id,
+      @HiveField(2) String title,
+      @HiveField(3) String url,
+      @HiveField(4) String thumbnailUrl}) = _$_Photo;
 
-  factory _PhotoDTO.fromJson(Map<String, dynamic> json) = _$_PhotoDTO.fromJson;
+  factory _Photo.fromJson(Map<String, dynamic> json) = _$_Photo.fromJson;
 
   @override
+  @HiveField(0)
   int get albumId;
   @override
+  @HiveField(1)
   int get id;
   @override
+  @HiveField(2)
   String get title;
   @override
+  @HiveField(3)
   String get url;
   @override
+  @HiveField(4)
   String get thumbnailUrl;
   @override
   @JsonKey(ignore: true)
-  _$PhotoDTOCopyWith<_PhotoDTO> get copyWith;
+  _$PhotoCopyWith<_Photo> get copyWith;
 }

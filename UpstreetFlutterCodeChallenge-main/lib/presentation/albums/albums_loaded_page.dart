@@ -20,8 +20,8 @@ class AlbumsLoadedPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute<AlbumCreationPage>(
-            builder: (context) =>
-                AlbumCreationPage(albumId: photos.first.albumId),
+            builder: (context) => AlbumCreationPage(
+                albumId: photos.first.albumId, id: photos.length + 1),
           ),
         ),
         child: const Icon(Icons.add),

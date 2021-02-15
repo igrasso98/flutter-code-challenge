@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-class Response {
-  const Response({
+class HttpResponse {
+  const HttpResponse({
     @required this.statusCode,
     @required this.body,
   });

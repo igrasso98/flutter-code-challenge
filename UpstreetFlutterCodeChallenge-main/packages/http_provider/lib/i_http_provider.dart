@@ -8,4 +8,18 @@ abstract class IHttpProvider {
     @required Map<String, String> headers,
     @required T fromJson(Map<String, dynamic> json),
   });
+
+  Future<Either<Failures, T>> postAndDecode<T>({
+    @required String url,
+    @required Map<String, String> headers,
+    @required Map<String, dynamic> body,
+    @required T fromJson(Map<String, dynamic> json),
+  });
+
+  Future<Either<Failures, T>> putAndDecode<T>({
+    @required String url,
+    @required Map<String, String> headers,
+    @required Map<String, dynamic> body,
+    @required T fromJson(Map<String, dynamic> json),
+  });
 }

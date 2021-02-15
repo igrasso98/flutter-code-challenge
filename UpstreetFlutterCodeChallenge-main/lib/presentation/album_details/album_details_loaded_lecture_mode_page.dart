@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:albums_repository/albums_repository.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/albums/bloc/albums_cubit.dart';
 import 'package:upstreet_flutter_code_challenge/resources/strings/images.dart';
+import 'package:upstreet_flutter_code_challenge/resources/strings/routes.dart';
 import 'package:upstreet_flutter_code_challenge/resources/strings/strings.dart';
 import 'package:upstreet_flutter_code_challenge/resources/theme/app_colors.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/album_details/widgets/album_details_title.dart';
@@ -22,6 +24,9 @@ class AlbumDetailsLoadedLectureModePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(sprintf(Strings.album_details_page_title, [photo.id])),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () => _onPopPage(context)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.read<AlbumDetailsModeCubit>().toggleMode(),
@@ -47,5 +52,10 @@ class AlbumDetailsLoadedLectureModePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onPopPage(BuildContext context) {
+    Navigator.popAndPushNamed(context, Routes.albums_page);
+    context.read<AlbumsCubit>().fetchAlbumPhotos();
   }
 }

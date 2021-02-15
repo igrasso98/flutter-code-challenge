@@ -9,10 +9,13 @@ class AlbumCreationInProcessPage extends StatefulWidget {
   const AlbumCreationInProcessPage({
     Key key,
     @required this.albumId,
+    @required this.id,
   })  : assert(albumId != null),
+        assert(id != null),
         super(key: key);
 
   final int albumId;
+  final int id;
 
   @override
   State<StatefulWidget> createState() => _AlbumCreationInProcessPageState();
@@ -31,7 +34,7 @@ class _AlbumCreationInProcessPageState
         title: const Text(Strings.new_album_title),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _createAlbum(context, widget.albumId),
+        onPressed: () => _createAlbum(context, widget.albumId, widget.id),
         child: const Icon(Icons.check),
       ),
       body: Padding(
@@ -67,10 +70,11 @@ class _AlbumCreationInProcessPageState
     super.dispose();
   }
 
-  void _createAlbum(BuildContext context, int albumId) {
+  void _createAlbum(BuildContext context, int albumId, int id) {
     context.read<AlbumCreationCubit>().createAlbum(
           PhotoViewModel(
             albumId: albumId,
+            id: id,
             title: titleController.text,
             url: urlController.text,
             thumbnailUrl: thumbnailUrlController.text,

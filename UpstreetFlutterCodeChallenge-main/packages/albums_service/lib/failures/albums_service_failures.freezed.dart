@@ -24,6 +24,14 @@ class _$AlbumsServiceFailuresTearOff {
       failure,
     );
   }
+
+// ignore: unused_element
+  AlbumsServicePersistanceFailures persistanceServiceFailure(
+      PersistanceFailures failure) {
+    return AlbumsServicePersistanceFailures(
+      failure,
+    );
+  }
 }
 
 /// @nodoc
@@ -36,22 +44,28 @@ mixin _$AlbumsServiceFailures {
   TResult when<TResult extends Object>({
     @required TResult defaultFailure(),
     @required TResult httpFailure(Failures failure),
+    @required TResult persistanceServiceFailure(PersistanceFailures failure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult defaultFailure(),
     TResult httpFailure(Failures failure),
+    TResult persistanceServiceFailure(PersistanceFailures failure),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     @required TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    @required
+        TResult persistanceServiceFailure(
+            AlbumsServicePersistanceFailures value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    TResult persistanceServiceFailure(AlbumsServicePersistanceFailures value),
     @required TResult orElse(),
   });
 }
@@ -119,9 +133,11 @@ class _$AlbumsServiceFailureDefaultFailure
   TResult when<TResult extends Object>({
     @required TResult defaultFailure(),
     @required TResult httpFailure(Failures failure),
+    @required TResult persistanceServiceFailure(PersistanceFailures failure),
   }) {
     assert(defaultFailure != null);
     assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
     return defaultFailure();
   }
 
@@ -130,6 +146,7 @@ class _$AlbumsServiceFailureDefaultFailure
   TResult maybeWhen<TResult extends Object>({
     TResult defaultFailure(),
     TResult httpFailure(Failures failure),
+    TResult persistanceServiceFailure(PersistanceFailures failure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -144,9 +161,13 @@ class _$AlbumsServiceFailureDefaultFailure
   TResult map<TResult extends Object>({
     @required TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     @required TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    @required
+        TResult persistanceServiceFailure(
+            AlbumsServicePersistanceFailures value),
   }) {
     assert(defaultFailure != null);
     assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
     return defaultFailure(this);
   }
 
@@ -155,6 +176,7 @@ class _$AlbumsServiceFailureDefaultFailure
   TResult maybeMap<TResult extends Object>({
     TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    TResult persistanceServiceFailure(AlbumsServicePersistanceFailures value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -252,9 +274,11 @@ class _$AlbumsServiceFailureHttpFailure
   TResult when<TResult extends Object>({
     @required TResult defaultFailure(),
     @required TResult httpFailure(Failures failure),
+    @required TResult persistanceServiceFailure(PersistanceFailures failure),
   }) {
     assert(defaultFailure != null);
     assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
     return httpFailure(failure);
   }
 
@@ -263,6 +287,7 @@ class _$AlbumsServiceFailureHttpFailure
   TResult maybeWhen<TResult extends Object>({
     TResult defaultFailure(),
     TResult httpFailure(Failures failure),
+    TResult persistanceServiceFailure(PersistanceFailures failure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -277,9 +302,13 @@ class _$AlbumsServiceFailureHttpFailure
   TResult map<TResult extends Object>({
     @required TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     @required TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    @required
+        TResult persistanceServiceFailure(
+            AlbumsServicePersistanceFailures value),
   }) {
     assert(defaultFailure != null);
     assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
     return httpFailure(this);
   }
 
@@ -288,6 +317,7 @@ class _$AlbumsServiceFailureHttpFailure
   TResult maybeMap<TResult extends Object>({
     TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
     TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    TResult persistanceServiceFailure(AlbumsServicePersistanceFailures value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -306,5 +336,151 @@ abstract class AlbumsServiceFailureHttpFailure
   Failures get failure;
   @JsonKey(ignore: true)
   $AlbumsServiceFailureHttpFailureCopyWith<AlbumsServiceFailureHttpFailure>
+      get copyWith;
+}
+
+/// @nodoc
+abstract class $AlbumsServicePersistanceFailuresCopyWith<$Res> {
+  factory $AlbumsServicePersistanceFailuresCopyWith(
+          AlbumsServicePersistanceFailures value,
+          $Res Function(AlbumsServicePersistanceFailures) then) =
+      _$AlbumsServicePersistanceFailuresCopyWithImpl<$Res>;
+  $Res call({PersistanceFailures failure});
+
+  $PersistanceFailuresCopyWith<$Res> get failure;
+}
+
+/// @nodoc
+class _$AlbumsServicePersistanceFailuresCopyWithImpl<$Res>
+    extends _$AlbumsServiceFailuresCopyWithImpl<$Res>
+    implements $AlbumsServicePersistanceFailuresCopyWith<$Res> {
+  _$AlbumsServicePersistanceFailuresCopyWithImpl(
+      AlbumsServicePersistanceFailures _value,
+      $Res Function(AlbumsServicePersistanceFailures) _then)
+      : super(_value, (v) => _then(v as AlbumsServicePersistanceFailures));
+
+  @override
+  AlbumsServicePersistanceFailures get _value =>
+      super._value as AlbumsServicePersistanceFailures;
+
+  @override
+  $Res call({
+    Object failure = freezed,
+  }) {
+    return _then(AlbumsServicePersistanceFailures(
+      failure == freezed ? _value.failure : failure as PersistanceFailures,
+    ));
+  }
+
+  @override
+  $PersistanceFailuresCopyWith<$Res> get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+    return $PersistanceFailuresCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$AlbumsServicePersistanceFailures
+    implements AlbumsServicePersistanceFailures {
+  const _$AlbumsServicePersistanceFailures(this.failure)
+      : assert(failure != null);
+
+  @override
+  final PersistanceFailures failure;
+
+  @override
+  String toString() {
+    return 'AlbumsServiceFailures.persistanceServiceFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is AlbumsServicePersistanceFailures &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @JsonKey(ignore: true)
+  @override
+  $AlbumsServicePersistanceFailuresCopyWith<AlbumsServicePersistanceFailures>
+      get copyWith => _$AlbumsServicePersistanceFailuresCopyWithImpl<
+          AlbumsServicePersistanceFailures>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult defaultFailure(),
+    @required TResult httpFailure(Failures failure),
+    @required TResult persistanceServiceFailure(PersistanceFailures failure),
+  }) {
+    assert(defaultFailure != null);
+    assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
+    return persistanceServiceFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult defaultFailure(),
+    TResult httpFailure(Failures failure),
+    TResult persistanceServiceFailure(PersistanceFailures failure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (persistanceServiceFailure != null) {
+      return persistanceServiceFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
+    @required TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    @required
+        TResult persistanceServiceFailure(
+            AlbumsServicePersistanceFailures value),
+  }) {
+    assert(defaultFailure != null);
+    assert(httpFailure != null);
+    assert(persistanceServiceFailure != null);
+    return persistanceServiceFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult defaultFailure(AlbumsServiceFailureDefaultFailure value),
+    TResult httpFailure(AlbumsServiceFailureHttpFailure value),
+    TResult persistanceServiceFailure(AlbumsServicePersistanceFailures value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (persistanceServiceFailure != null) {
+      return persistanceServiceFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AlbumsServicePersistanceFailures
+    implements AlbumsServiceFailures {
+  const factory AlbumsServicePersistanceFailures(PersistanceFailures failure) =
+      _$AlbumsServicePersistanceFailures;
+
+  PersistanceFailures get failure;
+  @JsonKey(ignore: true)
+  $AlbumsServicePersistanceFailuresCopyWith<AlbumsServicePersistanceFailures>
       get copyWith;
 }

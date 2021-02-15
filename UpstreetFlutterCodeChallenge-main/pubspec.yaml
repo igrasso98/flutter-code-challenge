@@ -34,9 +34,6 @@ dependencies:
 
   sprintf: ^5.0.0
 
-  cached_network_image: ^2.5.0
-
-
   albums_service:
     path: packages/albums_service
 
@@ -45,6 +42,9 @@ dependencies:
 
   http_provider:
     path: packages/http_provider
+
+  persistance_service:
+    path: packages/persistance_service
 
 dev_dependencies:
   flutter_test:

@@ -15,6 +15,8 @@ abstract class Photo with _$Photo {
     @required String thumbnailUrl,
   }) = _Photo;
 
+  const Photo._();
+
   factory Photo.fromPhotoDTO(PhotoDTO dto) => Photo(
         albumId: dto.albumId,
         id: dto.id,
@@ -24,4 +26,12 @@ abstract class Photo with _$Photo {
       );
 
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
+
+  PhotoDTO toPhotoDTO() => PhotoDTO(
+        albumId: albumId,
+        id: id,
+        title: title,
+        url: url,
+        thumbnailUrl: thumbnailUrl,
+      );
 }
