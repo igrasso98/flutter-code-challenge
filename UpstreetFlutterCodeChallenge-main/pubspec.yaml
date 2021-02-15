@@ -32,6 +32,11 @@ dependencies:
 
   flutter_bloc: ^6.1.2
 
+  sprintf: ^5.0.0
+
+  cached_network_image: ^2.5.0
+
+
   albums_service:
     path: packages/albums_service
 
@@ -50,3 +55,6 @@ dev_dependencies:
 flutter:
   
   uses-material-design: true
+
+  assets:
+    - assets/images/

@@ -6,6 +6,7 @@ import 'package:upstreet_flutter_code_challenge/resources/strings/routes.dart';
 import 'package:upstreet_flutter_code_challenge/resources/strings/strings.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/albums/albums_page.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/albums/bloc/albums_cubit.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/album_creation/bloc/album_creation_cubit.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -21,7 +22,10 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => AlbumsCubit(albumsRepository: albumsRepository),
-        )
+        ),
+        BlocProvider(
+          create: (_) => AlbumCreationCubit(albumsRepository: albumsRepository),
+        ),
       ],
       child: AppBuilder(),
     );

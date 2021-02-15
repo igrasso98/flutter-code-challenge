@@ -17,7 +17,8 @@ class AlbumsCubit extends Cubit<AlbumsState> {
     final either = await albumsRepository.fetchAlbumPhotos(1);
     return either.fold(
       (failure) => emit(AlbumsState.failed(failure)),
-      (photos) => emit(AlbumsStateLoaded(photos)),
+      (photos) =>
+          emit(AlbumsStateLoaded(photos..sort((a, b) => b.id.compareTo(a.id)))),
     );
   }
 }

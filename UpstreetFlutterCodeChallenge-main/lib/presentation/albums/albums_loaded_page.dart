@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:albums_repository/albums_repository.dart';
 import 'package:upstreet_flutter_code_challenge/resources/theme/app_colors.dart';
 import 'package:upstreet_flutter_code_challenge/presentation/albums/widgets/photo_card.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/album_details/album_details_page.dart';
+import 'package:upstreet_flutter_code_challenge/presentation/album_creation/album_creation_page.dart';
 
 class AlbumsLoadedPage extends StatelessWidget {
   const AlbumsLoadedPage({
@@ -16,8 +18,12 @@ class AlbumsLoadedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        //TODO: replace onPressed action when implemented
-        onPressed: () => null,
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute<AlbumCreationPage>(
+            builder: (context) =>
+                AlbumCreationPage(albumId: photos.first.albumId),
+          ),
+        ),
         child: const Icon(Icons.add),
       ),
       body: ListView.builder(
@@ -29,8 +35,13 @@ class AlbumsLoadedPage extends StatelessWidget {
                 title: photos[idx].title,
                 thumbnailUrl: photos[idx].thumbnailUrl,
                 titleStyle: const TextStyle(fontSize: 15),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute<AlbumDetailsPage>(
+                    builder: (context) => AlbumDetailsPage(photo: photos[idx]),
+                  ),
+                ),
               ),
-              const Divider(color: AppColors.divider_color)
+              const Divider(color: AppColors.divider_color),
             ],
           );
         },
